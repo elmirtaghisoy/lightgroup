@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="layout (template,menu)">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta content="" name="description"/>
+        <meta content="webthemez" name="author"/>
+
+        <title th:text="ok">Admin Panel -- Light Groupssss</title>
+        <base href="/">
+        <!-- Bootstrap Styles-->
+        <link rel="stylesheet" th:href="@{/static/admin/css/bootstrap.css}"/>
+        <!-- FontAwesome Styles-->
+        <link rel="stylesheet" th:href="@{/static/admin/css/font-awesome.css}"/>
+
+        <!-- Custom Styles-->
+        <link rel="stylesheet" th:href="@{/static/admin/css/custom-styles.css}"/>
+        <!-- Google Fonts-->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,500&display=swap"
+              rel="stylesheet">
+        <style>
+            .white-button {
+                margin-right: 10px;
+            }
+
+            .addModalLink {
+                color: white;
+                font-size: 14px;
+                font-weight: 500;
+            }
+
+            .addModalLink:hover {
+                color: black;
+            }
+
+            img {
+                width: 100px;
+                vertical-align: middle;
+            }
+
+            input,
+            textarea {
+                outline: none !important;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div th:replace="admin/layout/header.html::header"></div>
+            <div th:replace="admin/layout/header.html::header"></div>
+            <div id="page-wrapper">
+
+                <th:block th:include="${template}"/>
+
+                <div th:replace="admin/layout/footer.html::footer"></div>
+            </div>
+        </div>
+        <script th:src="@{/static/admin/js/jquery-1.10.2.js}"></script>
+        <script th:src="@{/static/admin/js/forBack.js}"></script>
+        <!-- Bootstrap Js -->
+        <script th:src="@{/static/admin/js/bootstrap.min.js}"></script>
+        <script src="https://kit.fontawesome.com/a87698a19e.js" crossorigin="anonymous"></script>
+        <script>
+            //blog.html
+            $(document).ready(function () {
+                $("#add-button").click(function () {
+                    $('#add-modal').modal('show');
+                });
+                $(".edit-button").click(function () {
+                    $('#edit-modal').modal('show');
+                });
+                $(".delete-button").click(function () {
+                    $('#delete-modal').modal('show');
+                });
+                $(".save-delete-button").click(function () {
+                    window.refresh();
+                });
+                $(".save-new-button").click(function () {
+                    if (($("#heading-title").val() != "")) {
+                        window.refresh();
+                    }
+                });
+            });
+            //photos.html
+            $(document).ready(function () {
+                $(".change-button1").click(function () {
+                    $('#change-modal1').modal('show');
+                });
+                $(".change-button2").click(function () {
+                    $('#change-modal2').modal('show');
+                });
+                $(".save-button").click(function () {
+                    if (($("#new-image").val() != "")) {
+                        window.refresh();
+
+                    }
+                });
+                $(".save-delete-button").click(function () {
+                    window.refresh();
+
+                });
+                $(".delete-photo1").click(function () {
+                    $('#delete-photo-modal1').modal('show');
+                });
+                $(".delete-photo2").click(function () {
+                    $('#delete-photo-modal2').modal('show');
+                });
+            });
+            //portfolio.html
+            $(document).ready(function () {
+                $(".edit-button").click(function () {
+                    $('#edit-modal').modal('show');
+                });
+
+                $(".delete-button").click(function () {
+                    $('#delete-service-modal').modal('show');
+                });
+
+                $(".add-button").click(function () {
+                    $('#add-modal').modal('show');
+                });
+                $(".save-delete-button").click(function () {
+                    window.refresh();
+
+                });
+                $(".save-new-button").click(function () {
+                    if (($("#title").val() != "") && ($("#description").val() != "") && ($("#image").val() != "")) {
+                        window.refresh();
+
+                    }
+                });
+            });
+            // services.hmtl
+            $(document).ready(function () {
+                $("#add-button").click(function () {
+                    $('#add-new-modal').modal('show');
+                });
+
+                $(".delete-service").click(function () {
+                    $('#delete-service-modal').modal('show');
+                });
+
+                $(".save-delete-button").click(function () {
+                    window.refresh();
+
+                });
+
+
+                $(".save-new-button, .save-delete-button").click(function () {
+                    if (($("#service-name").val() != "") && ($("#service-image").val() != "")) {
+                        window.refresh();
+
+                    }
+                });
+            });
+            //messages.html
+            $("#add-button").click(function () {
+                $('#add-new-modal').modal('show');
+            });
+            $(document).ready(function () {
+
+                $(".save-button").click(function () {
+                    window.refresh();
+
+                });
+
+                $(".save-delete-button").click(function () {
+                    window.refresh();
+
+                });
+
+
+                $(".delete-message").click(function () {
+                    $('#delete-message-modal').modal('show');
+                });
+
+                $(".change-info-button").click(function () {
+                    $('#change-info-modal').modal('show');
+                });
+            });
+        </script>
+    </body>
+</html>

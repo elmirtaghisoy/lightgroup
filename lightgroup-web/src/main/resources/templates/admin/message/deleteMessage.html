@@ -1,0 +1,22 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--/*@thymesVar id="message" type="com.datacity.lightgroup.model.Message"*/-->
+<form th:object="${message}" th:action="@{'/admin/message/delete'}" method="post">
+    <div class="modal-header">
+        <h4 class="modal-title">Silmək istədiyinizdən əminsinizmi?
+            <button type="button" class="close btn btn-lg" data-dismiss="modal">
+                &times;
+            </button>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <input id="id" type="hidden" th:field="*{id}"/>
+        <button type="button" class="white-button btn btn-secondary btn-sm ml-auto"
+                data-dismiss="modal">
+            Ləğv et
+        </button>
+        <button type="submit" class="save-new-button dark-button btn btn-primary btn-sm ml-1">
+            Təsdiqlə
+        </button>
+    </div>
+</form>
+</html>

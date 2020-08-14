@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" th:include="~{admin/layout/layout.html :: layout (~{::body},'home')}">
+
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta content="" name="description"/>
+    <meta content="webthemez" name="author"/>
+    <title>Admin Panel -- Light Group</title>
+    <!-- Bootstrap Styles-->
+    <link href="../../static/admin/css/bootstrap.css" rel="stylesheet"/>
+    <!-- FontAwesome Styles-->
+    <link href="../../static/admin/css/font-awesome.css" rel="stylesheet"/>
+    <!-- Morris Chart Styles-->
+    <link href="../../static/admin/js/morris/morris-0.4.3.min.css" rel="stylesheet"/>
+    <!-- Custom Styles-->
+    <link href="../../static/admin/css/custom-styles.css" rel="stylesheet"/>
+    <!-- Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,500&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="../../static/admin/js/Lightweight-Chart/cssCharts.css">
+</head>
+
+<body>
+<div class="header">
+    <h1 class="page-header">
+        Mesajlar
+        <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#">Ana Səhifə</a></li>
+        <li class="active">Mesajlar</li>
+    </ol>
+</div>
+<div id="page-inner">
+
+    <div class="btn-group" role="group">
+        <a th:href="@{/admin/messages/all}" type="button" class="yellow-button btn btn-danger">
+            Hamısı
+        </a>
+        <a th:href="@{/admin/messages/unread}" type="button" class="yellow-button btn btn-danger">
+            Oxunmamış
+        </a>
+    </div>
+
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Ad/Soyad</th>
+            <th scope="col">Əməliyyatlar</th>
+        </tr>
+        </thead>
+        <tbody th:replace="admin/message/allMessage.html :: allMessage"></tbody>
+
+        <!--<tr th:each="message: ${messages}">-->
+            <!--<th scope="row" th:text="${message.id}"></th>-->
+            <!--<td th:text="${message.name}+' '+${message.surname}"></td>-->
+            <!--<td>-->
+                <!--<button th:onclick="'initMessage(\'' + ${message.id} +'\',\'delete\')'" type="button"-->
+                        <!--class=" delete-message btn btn-danger">-->
+                    <!--Sil-->
+                <!--</button>-->
+            <!--<td>-->
+                <!--<button th:onclick="'initMessage(\'' + ${message.id} +'\',\'update\')'" type="button"-->
+                        <!--class=" change-info-button white-button btn btn-secondary">-->
+                    <!--Bax-->
+                <!--</button>-->
+            <!--</td>-->
+        <!--</tr>-->
+        <!--</tbody>-->
+    </table>
+
+</div>
+
+<div id="delete-message-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-md" role="content">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Silmək istədiyinizdən əminsinizmi?
+                    <button type="button" class="close btn btn-lg" data-dismiss="modal">
+                        &times;
+                    </button>
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-row">
+                        <button type="button" class="white-button btn btn-secondary btn-sm ml-auto"
+                                data-dismiss="modal">Ləğv
+                            et
+                        </button>
+                        <button type="submit"
+                                class="save-delete-button dark-button btn btn-primary btn-sm ml-1">Təsdiqlə
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="change-info-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-sm" role="content">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Ətraflı məlumat
+                    <button type="button" class="close btn btn-lg" data-dismiss="modal">
+                        &times;
+                    </button>
+                </h4>
+            </div>
+            <div id="updSocModalBody"></div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,37 @@
+.service-div {
+  height: 300px;
+  margin-top: 80px;
+
+
+  .service {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    height: 200px;
+    margin: 20px;
+    background-color: white;
+    padding: 15px;
+    .service-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      height: 100px;
+      background-color: rgba($color: $grey-color, $alpha: 0.2);
+      border-radius: 10px;
+      img {
+        max-width: 50px;
+        max-height: 70px;
+        width: auto;
+        height: auto;
+      }
+    }
+
+    .service-heading {
+      font-size: 30px;
+    }
+  }
+}
+

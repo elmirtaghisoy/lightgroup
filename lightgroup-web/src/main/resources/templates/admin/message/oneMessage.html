@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+<!--/*@thymesVar id="message" type="com.datacity.lightgroup.model.Message"*/-->
+<div class="modal-body">
+    <form>
+        <div class="form-group">
+            <label for="name">Ad</label>
+            <input type="text" class="form-control" disabled id="name" th:value="${message.name}" placeholder="Ad">
+        </div>
+        <div class="form-group">
+            <label for="last-name">Soyad</label>
+            <input type="text" class="form-control" disabled id="last-name" th:value="${message.surname}" placeholder="Soyad">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" disabled id="email" th:value="${message.email}" aria-describedby="emailHelp"
+                   placeholder="example@example.com">
+        </div>
+        <div class="form-group">
+            <label for="phone">Əlaqə nömrəsi</label>
+            <input type="tel" class="form-control" disabled id="phone" th:value="${message.phone}" placeholder="Əlaqə nömrəsi">
+        </div>
+
+        <div class="form-group">
+            <label for="business-name">Biznes Adı</label>
+            <input type="text" class="form-control" disabled id="business-name" th:value="${message.businessName}"
+                   placeholder="Biznes adı">
+        </div>
+        <div class="form-group">
+            <label for="business-type">Biznes növü</label>
+            <input type="text" class="form-control" disabled th:value="${message.businessTypeCommand.typeName}"
+                   id="business-type"
+                   placeholder="Biznes növü">
+        </div>
+        <div class="form-row">
+            <button type="button" class="white-button btn btn-secondary btn-sm ml-auto"
+                    data-dismiss="modal">Bağla
+            </button>
+        </div>
+    </form>
+
+</div>
+</body>
+</html>

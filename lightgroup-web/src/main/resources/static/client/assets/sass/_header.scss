@@ -1,0 +1,44 @@
+header {
+
+  .container {
+    .navbar {
+      
+      background-color: rgba($color: white, $alpha: 0.1);
+
+      .logo {
+        margin-bottom: 10px;
+        width: 100px;
+        height: 50px;
+    
+      }
+
+        .active {
+          border-bottom: 3px solid $yellow-color;
+        }
+
+        .nav-item {
+          margin: 0 15px;
+
+          .nav-link {
+            color: $black-color;
+            font-weight: 500;
+          }
+
+          .nav-link:hover {
+        background-color: rgba($color: $grey-color, $alpha: 0.5);
+          }
+        }
+      
+
+      .social {
+ 
+ 
+
+        a {
+          color: $black-color;
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+}

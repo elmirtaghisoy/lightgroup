@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta content="" name="description"/>
+    <meta content="webthemez" name="author"/>
+    <title>Admin Panel -- Light Group</title>
+    <!-- Bootstrap Styles-->
+    <link href="../../static/admin/css/bootstrap.css" rel="stylesheet"/>
+    <!-- FontAwesome Styles-->
+    <link href="../../static/admin/css/font-awesome.css" rel="stylesheet"/>
+    <!-- Morris Chart Styles-->
+    <link href="../../static/admin/js/morris/morris-0.4.3.min.css" rel="stylesheet"/>
+    <!-- Custom Styles-->
+    <link href="../../static/admin/css/custom-styles.css" rel="stylesheet"/>
+    <!-- Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,500&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css">
+
+
+</head>
+
+<body>
+<div id="wrapper">
+    <nav class="navbar navbar-default top-navbar" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html"><img src="../../static/admin/img/light_group_logo.png" alt=""></a>
+
+            <!-- <div id="sideNav" href="">
+                <i class="fa fa-bars icon"></i>
+            </div> -->
+        </div>
+        <div>
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-messages">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>Rakif Ramazanov</strong>
+                                    <span class="pull-right text-muted">
+                                            <em>Bugün</em>
+                                        </span>
+                                </div>
+                                <div>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>Xanım Hüseynzadə</strong>
+                                    <span class="pull-right text-muted">
+                                            <em>Dünən</em>
+                                        </span>
+                                </div>
+                                <div>Lorem Ipsum has been the industry's standard dummy text ever since an kwilnw...
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>Nərmin Musayeva</strong>
+                                    <span class="pull-right text-muted">
+                                            <em>Dünən</em>
+                                        </span>
+                                </div>
+                                <div>Lorem Ipsum has been the industry's standard dummy text ever since the...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="messages.html">
+                                <strong>Bütün mesajlar</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-messages -->
+                </li>
+                <!-- /.dropdown -->
+
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+
+                        <li><a href="parameters.html"><i class="fa fa-gear fa-fw"></i> Parametrlər</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login1.html"><i class="fa fa-sign-out fa-fw"></i> Çıxış</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+        </div>
+    </nav>
+    <!--/. NAV TOP  -->
+    <nav class=" navbar-default navbar-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav" id="main-menu">
+
+                <li>
+                    <a class="active-menu" href="index.html"><i class="fa fa-dashboard"></i> Ana Səhifə</a>
+                </li>
+
+
+                <li>
+                    <a href="services.html"><i class="fa fa-sitemap"></i> Xidmətlərimiz</a>
+                </li>
+
+                <li>
+                    <a href="messages.html"><i class="fa fa-qrcode"></i> Mesajlar</a>
+                </li>
+
+                <li>
+                    <a href="blog.html"><i class="fa fa-file-text"></i> Yazılar</a>
+                </li>
+
+                <li>
+                    <a href="photos.html"><i class="fa fa-camera"></i> Şəkillər</a>
+                </li>
+
+
+                <li>
+                    <a href="portfolio.html"><i class="fa fa-table"></i> Portfolio</a>
+                </li>
+                <li>
+                    <a href="parameters.html"><i class="fa fa-edit"></i> Parametrlər</a>
+                </li>
+
+
+            </ul>
+
+        </div>
+
+    </nav>
+    <!-- /. NAV SIDE  -->
+
+    <div id="page-wrapper">
+        <div class="header">
+            <h1 class="page-header">
+                Admin Panel
+                <small>Xoş gəlmisiniz</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#">Ana Səhifə</a></li>
+                <li><a href="#">Admin Panel</a></li>
+                <li class="active">Data</li>
+            </ol>
+
+        </div>
+        <div id="page-inner">
+
+            <!-- /. ROW  -->
+
+            <div class="row">
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="board">
+                        <div class="panel panel-primary">
+                            <div class="number">
+                                <h3>
+                                    <h3>1200</h3>
+                                    <small>Mesaj sayı</small>
+                                </h3>
+                            </div>
+                            <div class="icon">
+                                <i class="fa fa-eye fa-5x red"></i>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="board">
+                        <div class="panel panel-primary">
+                            <div class="number">
+                                <h3>
+                                    <h3>85</h3>
+                                    <small>Portfolio</small>
+                                </h3>
+                            </div>
+                            <div class="icon">
+                                <i class="fa fa-shopping-cart fa-5x blue"></i>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- /. PAGE INNER  -->
+        <footer>
+            <p>Bütün huquqlar qorunur. Hazırladı: <a href="http://lightgroup.com">Light Group</a></p>
+        </footer>
+    </div>
+
+    <!-- /. PAGE WRAPPER  -->
+</div>
+
+
+<!-- JS Scripts-->
+<!-- jQuery Js -->
+<script src="../../static/admin/js/jquery-1.10.2.js"></script>
+<!-- Bootstrap Js -->
+<script src="../../static/admin/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>

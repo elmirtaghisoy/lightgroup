@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" th:include="~{admin/layout/layout.html :: layout (~{::body},'home')}">
+
+<head>
+    ...
+<body>
+<div class="header">
+
+    <h1 class="page-header">
+        Admin Panel
+        <small>Xoş gəlmisiniz</small>
+    </h1>
+
+    <ol class="breadcrumb">
+        <li><a href="#">Admin Panel</a></li>
+        <li class="active">Parametrlər</li>
+    </ol>
+</div>
+<div id="page-inner" style="padding:0 auto;">
+    <!--/*@thymesVar id="user" type="com.datacity.lightgroup.model.User"*/-->
+    <form class="col-md-6" th:object="${user}" th:action="@{'/admin/password'}" method="post">
+        <div class="form-group">
+            <label for="password">Əvvəlki şifrə</label>
+            <input id="password" type="password" name="oldPass" class="form-control" required
+                   placeholder="Şifrə daxil edin">
+        </div>
+        <div class="form-group">
+            <label for="new_password">Yeni şifrə</label>
+            <input type="password" name="newPass" id="new_password" class="form-control" required
+                   placeholder="Yeni şifrəni daxil edin">
+        </div>
+        <div class="form-group">
+            <label for="compare_password">Şifrənizi doğrulayın</label>
+            <input type="password" name="confirmPass" id="compare_password" class="form-control"
+                   required placeholder="Yeni şifrənizi təkrar daxil edin">
+        </div>
+        <span class="errors"></span>
+        <button type="submit" class="yellow-button btn  btn-warning btnSubmit prmt-save-left"> Yadda
+            saxla
+        </button>
+    </form>
+
+    <form class="col-md-6" th:object="${user}" th:action="@{'/admin/username'}" method="post">
+        <div class="form-group">
+            <label for="username">Əvvəlki istifadəçi adı</label>
+            <input id="username" type="text" name="oldUsername" class="form-control" required
+                   placeholder="Əvvəlki istifadəçi adını daxil edin">
+        </div>
+        <div class="form-group">
+            <label for="newUsername">Yeni istifadəçi adı</label>
+            <input id="newUsername" type="text" name="newUsername" class="form-control" required
+                   placeholder="Əvvəlki istifadəçi adını daxil edin">
+        </div>
+        <button type="submit" class="yellow-button btn  btn-warning btnChange"> Yadda saxla</button>
+    </form>
+
+
+</div>
+</body>
+
+</html>

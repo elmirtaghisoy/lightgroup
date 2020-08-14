@@ -1,0 +1,31 @@
+footer {
+  font-size: 15px;
+
+  .container {
+    .navbar {
+ margin-top: 20px;
+      background-color: rgba($color: $grey-color, $alpha: 0.0);
+
+      .logo {
+        width: 70px;
+        height: 35px;
+      }
+
+      .nav-item {
+        margin: 0 20px;
+
+        .nav-link {
+          color: $black-color;
+          font-weight: 500;
+        }
+      }
+
+      .social {
+        a {
+          color: $black-color;
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+}

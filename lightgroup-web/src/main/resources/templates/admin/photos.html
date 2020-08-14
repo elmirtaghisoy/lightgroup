@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:include="~{admin/layout/layout.html :: layout (~{::body},'home')}">
+<head>
+    ...
+</head>
+<body>
+
+<div class="header">
+    <h1 class="page-header">
+        Şəkillər
+        <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#">Ana Səhifə</a></li>
+        <li class="active">Şəkillər</li>
+    </ol>
+</div>
+<div id="page-inner">
+    <div class="main-page-photos">
+        <div class="left-side col-sm-6 col-12">
+            <div class="form-row">
+                <button type="submit" class="change-button1 dark-button btn btn-primary btn-sm ml-1">
+                    Şəkli Dəyiş / Sil
+                </button>
+            </div>
+            <img th:src="@{'image/1/header'}" alt="">
+        </div>
+        <div class="right-side col-sm-6 col-12">
+            <div class="form-row">
+                <button type="submit" class="change-button2 dark-button btn btn-primary btn-sm ml-1">Şəkli
+                    Dəyiş / Sil
+                </button>
+            </div>
+            <img th:src="@{'image/2/header'}" alt="">
+        </div>
+    </div>
+</div>
+
+<div id="delete-photo-modal1" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-md" role="content">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Silmək istədiyinizdən əminsinizmi?
+                    <button type="button" class="close btn btn-lg" data-dismiss="modal">
+                        &times;
+                    </button>
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-row">
+                        <button type="button" class="white-button btn btn-secondary btn-sm ml-auto"
+                                data-dismiss="modal">
+                            Ləğv et
+                        </button>
+                        <button type="submit"
+                                class="save-delete-button dark-button btn btn-primary btn-sm ml-1">
+                            Təsdiqlə
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="delete-photo-modal2" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-md" role="content">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Silmək istədiyinizdən əminsinizmi?
+                    <button type="button" class="close btn btn-lg" data-dismiss="modal">
+                        &times;
+                    </button>
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-row">
+                        <button type="button" class="white-button btn btn-secondary btn-sm ml-auto"
+                                data-dismiss="modal">Ləğv
+                            et
+                        </button>
+                        <button type="submit"
+                                class="save-delete-button dark-button btn btn-primary btn-sm ml-1">
+                            Təsdiqlə
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="change-modal1" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-sm" role="content">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Şəkil dəyiş
+                    <button type="button" class="close" data-dismiss="modal">
+                        &times;
+                    </button>
+                </h4>
+            </div>
+            <form method="post" enctype="multipart/form-data"
+                  th:action="@{'admin/save/static/image'}">
+                <div class="modal-body">
+                    <label class="control-label">Select File</label>
+                    <input id="file" name="file" type="file" class="file">
+                    <!--value ajaxla deyishecek-->
+                    <input id="whichImage" name="whichImage" type="hidden" value="1">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="white-button btn btn-secondary btn-sm ml-auto"
+                            data-dismiss="modal">Ləğv
+                        et
+                    </button>
+                    <button type="submit" class="save-button dark-button btn btn-primary btn-sm ml-1">
+                        Təsdiqlə
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="change-modal2" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-sm" role="content">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Şəkil dəyiş
+                    <button type="button" class="close" data-dismiss="modal">
+                        &times;
+                    </button>
+                </h4>
+            </div>
+            <form method="post" enctype="multipart/form-data"
+                  th:action="@{'admin/save/static/image'}">
+                <div class="modal-body">
+                    <label class="control-label">Select File</label>
+                    <input id="file" name="file" type="file" class="file">
+                    <!--value ajaxla deyishecek-->
+                    <input id="whichImage" name="whichImage" type="hidden" value="2">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="white-button btn btn-secondary btn-sm ml-auto"
+                            data-dismiss="modal">Ləğv
+                        et
+                    </button>
+                    <button type="submit" class="save-button dark-button btn btn-primary btn-sm ml-1">
+                        Təsdiqlə
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+
+
+</html>

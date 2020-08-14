@@ -1,0 +1,123 @@
+<html xmlns:th="http://www.thymeleaf.org" th:include="~{admin/layout/layout.html :: layout (~{::body},'home')}">
+
+<head>
+    ...
+</head>
+
+<body>
+
+<div class="header">
+    <!--/*@thymesVar id="headerText" type="com.datacity.lightgroup.model.Header"*/-->
+    <h1 class="page-header">
+        Admin Panel
+        <small>Xoş gəlmisiniz</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#">Admin Panel</a></li>
+        <li class="active">Yazı</li>
+    </ol>
+
+</div>
+<div id="page-inner" style="padding:0 auto;">
+    <!--Header Form-->
+    <form th:object="${headerText}" th:action="@{'/admin/header/update'}" method="post">
+        <div class="form-group">
+            <label for="title">Başlıq</label>
+            <input type="text" name="title" id="title" class="form-control" required
+                   th:value="${headerText.textHeader}">
+        </div>
+        <button type="submit" class="yellow-button btn  btn-warning btnSubmit prmt-save-left">
+            Yadda saxla
+        </button>
+    </form>
+
+    <br><br>
+
+    <!--About Us Form-->
+    <form th:object="${headerText}" th:action="@{'/admin/about/update'}" method="post">
+        <div class="form-group">
+            <label style="display: block;" for="aboutUs">Haqqımızda</label>
+            <textarea name="aboutUs" id="aboutUs" cols="30" rows="10" class="form-control"
+                      th:text="${headerText.aboutUs}" required></textarea>
+        </div>
+        <button type="submit" class="yellow-button btn  btn-warning btnSubmit prmt-save-left"> Yadda
+            saxla
+        </button>
+    </form>
+
+    <br><br>
+
+    <p style="font-size: 15px; font-weight: 600;"> Biznes növləri</p>
+
+    <br>
+
+    <button th:onclick="'init(\'0\',\'add\',\'service\')'" class=" dark-button btn btn-secondary" id="add-button"
+            data-toggle="modal" type="submit">
+        Yeni biznes növü əlavə et
+    </button>
+
+    <!--BusinessType Table-->
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th class="text-center" scope="col">Başlıq</th>
+            <th class="text-center" scope="col">Əməliyyatlar</th>
+        </tr>
+        </thead>
+        <tbody th:replace="admin/business/allBusinessTypeList.html :: businessTypeList"></tbody>
+    </table>
+
+    <!-- Modal For Delete -->
+    <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div id="delSocModalBody"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Modal For add-->
+    <div class="modal fade" id="add-modal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">Edit</h5>
+                    <button type="button" class="close cls-btn-blog-edit" data-dismiss="modal"
+                            aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="addSocModalBody"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal For Edit -->
+    <div class="modal fade" id="edit-modal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">Edit</h5>
+                    <button type="button" class="close cls-btn-blog-edit" data-dismiss="modal"
+                            aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="updSocModalBody"></div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+</body>
+
+</html>

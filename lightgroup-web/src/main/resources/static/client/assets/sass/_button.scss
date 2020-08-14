@@ -1,0 +1,36 @@
+@import "mixins";
+@import "variables";
+
+.btn {
+  @include d-inline;
+  @include button-spacing($padding-lg, $padding-sm);
+  box-sizing: border-box;
+}
+
+// .btn-width-border {
+//     @extend .btn;
+//     @include bg-text-color($secondary-color, $main-text-color);
+//     @include border(3px, solid, $main-text-color);
+// }
+
+.btn-border-radius {
+  @extend .btn;
+  @include border-radius($border-radius-md + 2px);
+}
+.warning_btn {
+  @extend .btn;
+  @extend .btn-border-radius;
+  @include bg-text-color($yellow-color, $white-color);
+  @include button-spacing($padding-lg, $padding-lg * 3);
+  font-size: 1.3rem;
+}
+// .btn-warning-expand {
+//     @extend .btn;
+//     @include bg-text-color($secondary-color, $bg-color);
+//     @include button-spacing($padding-sm+2px, $padding-lg+12px);
+//     font-size: 15px;
+//     font-weight: 700;
+//     outline: none;
+//     border: none;
+
+// }

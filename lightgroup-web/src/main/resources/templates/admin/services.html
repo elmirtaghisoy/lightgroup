@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:include="~{admin/layout/layout.html :: layout (~{::body},'home')}">
+<head>
+    ...
+</head>
+
+<body>
+
+<div class="header">
+    <h1 class="page-header">
+        Xidmətlərimiz
+        <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#">Ana Səhifə</a></li>
+        <li class="active">Xidmətlərimiz</li>
+    </ol>
+</div>
+<div id="page-inner">
+
+    <button th:onclick="'init(\'0\',\'add\',\'service\')'" class=" dark-button btn btn-secondary" id="add-button"
+            data-toggle="modal" type="submit">
+        Yeni xidmət əlavə et
+    </button>
+    <!--/*@thymesVar id="service" type="com.datacity.lightgroup.model.Service"*/-->
+    <div class="cards">
+        <div th:each="service : ${services}" class="row mycard">
+            <div class="mycard-header">
+                <h4 th:text="${service.title}"></h4>
+            </div>
+            <img th:src="@{'image/'+${service.id}+'/service'}" alt="">
+            <div class="mycard-body">
+            </div>
+            <button th:onclick="'init(\'' + ${service.id} +'\',\'delete\',\'service\')'"
+                    class="delete-service btn btn-sm btn-danger"
+                    type="submit">Xidməti sil
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<div id="add-new-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-sm" role="content">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Yeni xidmət əlavə et
+                    <button type="button" class="close" data-dismiss="modal">
+                        &times;
+                    </button>
+                </h4>
+            </div>
+            <div id="addSocModalBody"></div>
+        </div>
+    </div>
+</div>
+<div id="delete-service-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-md" role="content">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Silmək istədiyinizdən əminsinizmi?
+                    <button type="button" class="close btn btn-lg" data-dismiss="modal">
+                        &times;
+                    </button>
+                </h4>
+            </div>
+            <div id="delSocModalBody"></div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" th:include="~{admin/layout/layout.html :: layout (~{::body},'home')}">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta content="" name="description"/>
+    <meta content="webthemez" name="author"/>
+    <title>Admin Panel -- Light Group</title>
+    <!-- Bootstrap Styles-->
+    <link href="../../static/admin/css/bootstrap.css" rel="stylesheet"/>
+    <!-- FontAwesome Styles-->
+    <link href="../../static/admin/css/font-awesome.css" rel="stylesheet"/>
+    <!-- Morris Chart Styles-->
+    <link href="../../static/admin/js/morris/morris-0.4.3.min.css" rel="stylesheet"/>
+    <!-- Custom Styles-->
+    <link href="../../static/admin/css/custom-styles.css" rel="stylesheet"/>
+    <!-- Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,500&display=swap"
+          rel="stylesheet">
+    <style>
+        img {
+            width: 100px;
+            vertical-align: middle;
+        }
+
+        input,
+        textarea {
+            outline: none !important;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1 class="page-header">
+        Admin Panel
+        <small>Xoş gəlmisiniz</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#">Admin Panel</a></li>
+        <li class="active">Portfolio</li>
+    </ol>
+
+</div>
+<div id="page-inner">
+    <a type="submit" th:onclick="'init(\'0\',\'add\',\'portfolio\')'" class="add-button dark-button btn btn-block btn-info">
+        Yenisini Əlavə et</a>
+
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Şəkil</th>
+            <th scope="col">Başlıq</th>
+            <th scope="col">Yazı</th>
+            <th scope="col">Əməliyyatlar</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="portfolio : ${portfolios}">
+            <th scope="row" th:text="${portfolio.id}">1</th>
+            <td>
+                <img th:src="@{'image/'+${portfolio.id}+'/portfolio'}" alt="">
+            </td>
+            <td th:text="${portfolio.getTitle()}">Banko.az</td>
+            <td th:text="${portfolio.description}">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque,
+                porro. Non nesciunt
+                dicta quidem harum.
+            </td>
+
+            <td>
+                <a th:onclick="'init(\'' + ${portfolio.id} +'\',\'update\',\'portfolio\')'"
+                   href="#" type="submit" class="edit-button white-button btn btn-primary" data-toggle="modal">
+                    <i class="far fa-edit"></i>
+                </a>
+            </td>
+
+            <td>
+                <a th:onclick="'init(\'' + ${portfolio.id} +'\',\'delete\',\'portfolio\')'"
+                   class="delete-button btn dark-button " data-toggle="modal">
+                    <i class="fas fa-trash-alt"></i>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!-- Modal For Delete -->
+    <div id="delete-service-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-md" role="content">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Silmək istədiyinizdən əminsinizmi?
+                        <button type="button" class="close btn btn-lg" data-dismiss="modal">
+                            &times;
+                        </button>
+                    </h4>
+                </div>
+                <div id="delSocModalBody"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal For Edit -->
+    <div class="modal fade" id="edit-modal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">Edit</h5>
+                    <button type="button" class="close cls-btn-prtf-edit" data-dismiss="modal"
+                            aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="updSocModalBody"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="add-modal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addModalLabel">Add</h5>
+                    <button type="button" class="close cls-btn-prtf-edit" data-dismiss="modal"
+                            aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="addSocModalBody"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

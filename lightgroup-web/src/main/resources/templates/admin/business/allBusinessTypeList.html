@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    ...
+</head>
+<body>
+<!--/*@thymesVar id="businessType" type="com.datacity.lightgroup.model.BusinessType"*/-->
+<tbody th:fragment="businessTypeList">
+<tr th:each="businessType : ${businessTypeList}">
+    <th scope="row" th:text="${businessType.id}"></th>
+    <td class="text-center" th:text="${businessType.typeName}"></td>
+    <td class="text-center">
+        <a th:onclick="'init(\'' + ${businessType.id} +'\',\'update\',\'business\')'"
+           class="edit-button white-button btn btn-primary " data-toggle="modal">
+            <i class="far fa-edit"></i>
+        </a>
+        <a th:onclick="'init(\'' + ${businessType.id} +'\',\'delete\',\'business\')'"
+           class="delete-button btn dark-button " data-toggle="modal">
+            <i class="fas fa-trash-alt"></i>
+        </a>
+    </td>
+</tr>
+</tbody>
+</body>
+</html>

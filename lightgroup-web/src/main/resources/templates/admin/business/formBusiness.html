@@ -1,0 +1,24 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--/*@thymesVar id="businessType" type="com.datacity.lightgroup.model.BusinessType"*/-->
+<form th:object="${businessType}" th:action="@{'/admin/business'}" method="post">
+    <div class="modal-body">
+        <input id="id" type="hidden" th:field="*{id}"/>
+        <div class="col-12">
+            <div class="form-group">
+                <label for="title"> Başlıq</label>
+                <input type="text" name="title" id="title" class="form-control"
+                       th:field="*{typeName}">
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="white-button btn btn-secondary btn-sm ml-auto"
+                data-dismiss="modal">
+            Ləğv et
+        </button>
+        <button type="submit" class="save-new-button dark-button btn btn-primary btn-sm ml-1">
+            Təsdiqlə
+        </button>
+    </div>
+</form>
+</html>

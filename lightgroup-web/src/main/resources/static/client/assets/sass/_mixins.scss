@@ -1,0 +1,22 @@
+@mixin border-bottom($width, $style, $color) {
+ border-bottom: $width $style $color;
+}   
+@mixin d-inline {
+ display: inline-block;
+}
+
+@mixin button-spacing($padding-x, $padding-y) {
+ padding: $padding-x $padding-y;
+}
+
+@mixin bg-text-color($yellow-color, $white-color) {
+ background: $yellow-color;
+ color: $white-color;
+}
+
+@mixin border($width, $style, $color) {
+ border: $width $style $color;
+}
+@mixin border-radius($width) {
+ border-radius: $width ;
+}

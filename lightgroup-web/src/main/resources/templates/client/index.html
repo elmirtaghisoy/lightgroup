@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Light Group Homepage</title>
+    <base href="/">
+    <!-- Bootstrap Styles-->
+    <link rel="stylesheet" th:href="@{/static/client/assets/lib/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{/static/client/assets/lib/bootstrap-grid.css}"/>
+    <link rel="stylesheet" th:href="@{/static/client/assets/lib/bootstrap-reboot.css}"/>
+    <!-- FontAwesome Styles-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
+
+    <!-- Custom Styles-->
+    <link rel="stylesheet" th:href="@{/static/client/assets/sass/style.css}"/>
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+    <!-- Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+          rel="stylesheet"/>
+</head>
+
+<body style="overflow-x: hidden;">
+
+<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-angle-up" aria-hidden="true"></i></button>
+<!-- Header -->
+<header>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="../../static/client/assets/img/light_group_logo.png" class="img-responsive"
+                         alt="Light Group Logo"/>
+                </a>
+            </div>
+
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-around" id="navbarCollapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Ana Səhifə </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#service">Xidmətlər</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Haqqımızda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Əlaqə</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="social soci-mobile">
+                <a href="https://www.facebook.com/ewebdesigns/" target="blank" class="fas fa-phone"></a>
+
+                <a href="https://www.facebook.com/ewebdesigns/" target="blank" class="fab fa-instagram"></a>
+
+                <a href="https://www.facebook.com/ewebdesigns/" target="blank" class="fab fa-facebook-f"></a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- End of the Header -->
+
+
+<!--Banner -->
+<main>
+    <!--/*@thymesVar id="header" type="com.datacity.lightgroup.model.Header"*/-->
+    <section class="banner">
+        <section class=" container banner_content">
+            <section class="banner_content_left">
+                <img th:src="@{'image/1/header'}" class="img-responsive" alt="">
+            </section>
+
+            <section class="banner_content_middle">
+
+                <div class="text-center">
+                    <h2 th:text="${header.textHeader}">Professional Yanaşma</h2>
+                </div>
+
+                <section class="btn_aplly">
+                    <a href="#contact" class="contact-btn warning_btn  ">Müraciət et</a>
+                </section>
+                <span class="text-center"><i class="far fa-clock"></i></span>
+
+            </section>
+            <section class="banner_content_right">
+                <img th:src="@{'image/2/header'}" class="img-responsive" alt="">
+            </section>
+        </section>
+    </section>
+
+    <!--End of the  Banner -->
+
+
+    <!-- Services -->
+    <div class="container" id="service">
+        <div class="service-div">
+            <h2 class="content-header row d-flex align-items-center justify-content-around">
+                Xidmətlər
+            </h2>
+            <!--/*@thymesVar id="service" type="com.datacity.lightgroup.model.Service"*/-->
+            <div class="services row align-items-center justify-content-around">
+                <div th:each="service : ${service}" class="service col-md-3 col-8">
+                    <div class="service-image">
+                        <img th:src="@{'image/'+${service.id}+'/service'}" alt="Web Icon"/>
+                    </div>
+
+                    <div class="service-heading">
+                        <h4 th:text="${service.title}"></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End of the Services -->
+
+
+    <!-- Portfolios -->
+    <!--/*@thymesVar id="portfolio" type="com.datacity.lightgroup.model.Portfolio"*/-->
+    <div class="portfolios" id="portfolio">
+
+        <h2 class="content-header d-flex align-items-center justify-content-around">
+            Portfolio
+        </h2>
+
+        <div th:each="portfolio :${portfolio}" class="portfolio portfolio-right" data-aos="fade-right">
+            <div class="portfolio-text-container  ">
+                <div class="portfolio-header">
+                    <h2 th:text="${portfolio.title}"></h2>
+                </div>
+
+                <p th:text="${portfolio.description}" class="portfolio-p">
+                </p>
+            </div>
+
+            <div class="portfolio-image img-responsive">
+                <img <img th:src="@{'image/'+${portfolio.id}+'/portfolio'}" alt="">
+            </div>
+        </div>
+
+        <div class="portfolio-link">
+            <a class="" th:href="@{/portfolio}">Hamısına Bax</a>
+        </div>
+    </div>
+
+    <!-- End of the Portfolios -->
+
+
+    <!-- About -->
+    <div class="about" id="about">
+
+        <div class="about-image ">
+            <img class="about-img-css" src="../../static/client/assets/img/campaign-creators-gMsnXqILjp4-unsplash.png"
+                 alt="">
+        </div>
+        <div class="about-right-text ">
+            <div class="about-title">
+                <h3 class="about-title-text">Haqqımızda</h3>
+            </div>
+
+
+            <div class="about-info ">
+
+
+                <div class="about-right-text-inside">
+                    <div class="about-logo">
+                        <h2 class="about-logo-text">Light Group</h2>
+                    </div>
+                    <p th:text="${header.aboutUs}" class="about-p"></p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <section class="contact" data-aos="zoom-in" id="contact">
+        <div class="container">
+            <!--/*@thymesVar id="message" type="com.datacity.lightgroup.model.Message"*/-->
+            <section class="contact_content">
+                <div class="full-container">
+                    <p class="text-center" style="font-size: 1.6rem; font-weight: 600;"> Əlaqə</p>
+                    <form class="row p-4" th:action="@{/message/send}" th:object="${message}" method="post">
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" class="form-control" required
+                                       placeholder="Adınız">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" class="form-control" required
+                                       placeholder="Mail">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="buisness-name" name="businessName" class="form-control" required
+                                       placeholder="Biznes adı">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <input type="text" id="name" name="surname" class="form-control" required
+                                       placeholder="Soyadınız">
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="name" name="phone" class="form-control" required
+                                       placeholder="Telefon Nömrəniz">
+                            </div>
+                            <div class="form-group ">
+                                <!--/*@thymesVar id="businessType" type="com.datacity.lightgroup.model.BusinessType"*/-->
+                                <select name="bt" id="inputState" class="form-control" required>
+                                    <option disabled selected>Biznes növü</option>
+                                    <option th:each="businessType :${businessTypes}"
+                                            th:value="${businessType.id}"
+                                            th:text="${businessType.typeName}"></option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="submitBtn">
+                            <button type="submit" style="outline: none; border: none;" class="warning_btn btn btn-sm">
+                                Göndər
+                            </button>
+                        </div>
+                </div>
+                </form>
+            </section>
+        </div>
+    </section>
+
+</main>
+<!-- End of the Abobe -->
+
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+
+        <nav class="navbar  navbar-expand-lg ">
+
+            <div class="logo">
+                <a href="index.html">
+                    <img src="../../static/client/assets/img/light_group_logo.png" class="img-responsive"
+                         alt="Light Group Logo"/>
+                </a>
+            </div>
+
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <div class="collapse navbar-collapse justify-content-around" id="navbarCollapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Ana Səhifə </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Xidmətlər</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Haqqımızda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Əlaqə</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="social soci-mobile">
+
+                <a href="https://www.facebook.com/ewebdesigns/" target="blank" class="fab fa-instagram"></a>
+
+                <a href="https://www.facebook.com/ewebdesigns/" target="blank" class="fab fa-facebook-f"></a>
+
+                <a href="https://www.facebook.com/ewebdesigns/" target="blank" class="fab fa-twitter"></a>
+
+                <a href="https://www.facebook.com/ewebdesigns/" target="blank" class="fab fa-linkedin"></a>
+            </div>
+        </nav>
+    </div>
+</footer>
+<!--End of the  Footer -->
+
+
+<!-- Scripts -->
+<script th:src="@{/static/client/assets/js/jquery-3.5.1.min.js}"></script>
+<!-- Bootstrap Js -->
+<script th:src="@{/static/client/assets/js/bootstrap.min.js}"></script>
+<!-- Custom Js -->
+<script th:src="@{/static/client/assets/js/scripts.js}"></script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+    AOS.init();
+</script>
+<script>
+    let mybutton = document.getElementById("myBtn");
+
+    window.onscroll = function () {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+</body>
+
+</html>

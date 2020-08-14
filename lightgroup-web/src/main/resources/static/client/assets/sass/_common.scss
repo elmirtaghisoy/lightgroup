@@ -1,0 +1,26 @@
+html{
+    scroll-behavior: smooth
+}
+body {
+    background-color: rgba($color: grey, $alpha: 0.1);
+    font-family: "Arimo", sans-serif;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+a{
+    text-decoration: none;
+}  
+.img-responsive{
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.content-header{
+    font-size: 40px;
+    margin: 30px;
+}
+
+a:hover{
+    text-decoration: none;
+}

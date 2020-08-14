@@ -1,0 +1,59 @@
+body {
+  font-family: "Arimo", sans-serif;
+  background-color: #dfdfdf;
+}
+
+.navbar-brand img {
+  width: 100px;
+  height: 50px;
+}
+
+.navbar {
+  padding-top: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar .active {
+  border-bottom: 3px solid #fee715;
+}
+
+.navbar .nav-item {
+  margin: 0 15px;
+  background-color: red;
+}
+
+.navbar .nav-item .nav-link {
+  color: black;
+  font-weight: 500;
+}
+
+.social a {
+  background-color: red;
+  text-decoration: none;
+  color: black;
+  margin: 0 5px;
+}
+
+.services {
+  height: 400px;
+  margin-top: 150px;
+}
+
+.service {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  height: 200px;
+  margin: 20px;
+  background-color: white;
+}
+
+.service .service-image {
+  padding: 10px;
+  width: 60px;
+  height: 60px;
+  background-color: rgba(223, 223, 223, 0.3);
+  border-radius: 10px;
+}

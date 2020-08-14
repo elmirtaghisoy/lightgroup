@@ -1,0 +1,68 @@
+$yellow-color: #fee715;
+$grey-color: #dfdfdf;
+$black-color: black;
+
+body {
+  font-family: "Arimo", sans-serif;
+background-color: $grey-color;
+}
+
+.navbar-brand img {
+  width: 100px;
+  height: 50px;
+}
+
+.navbar {
+  padding-top: 20px;
+  background-color: rgba($color: white, $alpha: 0.1);
+
+  .active {
+    border-bottom: 3px solid $yellow-color;
+  }
+
+  .nav-item {
+    margin: 0 15px;
+background-color: red;
+    .nav-link {
+      color: $black-color;
+      font-weight: 500;
+    }
+  }
+}
+
+.social {
+  a {
+    background-color: red;
+    text-decoration: none;
+    color: $black-color;
+    margin: 0 5px;
+  }
+}
+
+.services{
+  height: 400px;
+margin-top: 150px;
+ 
+
+} 
+
+.service{
+display: flex;
+justify-content: space-around;
+align-items: center;
+flex-direction: column;
+
+  border-radius: 10px;
+  height: 200px;
+
+margin: 20px;
+background-color: white;
+
+.service-image{
+  padding: 10px;
+    width: 60px;
+    height: 60px;
+    background-color: rgba($color: $grey-color, $alpha: 0.3);
+    border-radius: 10px;
+  }
+}
